@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+# when is not on production enable next:
 # import environ
 # env = environ.Env()
 # environ.Env.read_env()
@@ -22,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# when is not on production enable next:
 # SECRET_KEY = env("SECRET_KEY") 
 SECRET_KEY = os.environ['SECRET_KEY']
 
@@ -29,8 +31,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['web-production-cd12.up.railway.app','127.0.0.1']
+# when on production delete '127.0.0.1'
+ALLOWED_HOSTS = ['web-production-cd12.up.railway.app','www.acmilanblog.online', '127.0.0.1']
 
 
 # Application definition
@@ -84,12 +86,12 @@ WSGI_APPLICATION = 'blog_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway', 
-        'USER': 'postgres', 
-        'PASSWORD': '8ejKpIiy3j7w34cLWqJP',
-        'HOST': 'containers-us-west-33.railway.app', 
-        'PORT': '5578',
+        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.postgresql_psycopg2'),
+        'NAME': os.environ.get('POSTGRES_DB'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_HOST'),
+        'PORT': os.environ.get('POSTGRES_PORT')
     }
 }
 
