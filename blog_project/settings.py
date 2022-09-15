@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['web-production-cd12.up.railway.app']
+ALLOWED_HOSTS = ['web-production-cd12.up.railway.app','127.0.0.1']
 
 
 # Application definition
