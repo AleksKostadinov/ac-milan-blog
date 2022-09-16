@@ -32,7 +32,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # when on production delete '127.0.0.1'
-ALLOWED_HOSTS = ['web-production-cd12.up.railway.app','www.acmilanblog.online', '127.0.0.1']
+ALLOWED_HOSTS = ['web-production-cd12.up.railway.app','www.acmilanblog.online', '162.255.119.105', '127.0.0.1']
 
 
 # Application definition
