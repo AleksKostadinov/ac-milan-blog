@@ -6,9 +6,9 @@
 
 /* VARIABLE DEFINITIONS */
 :root {
-  --primary: black;
-  --secondary: black;
-  --accent: red;
+  --primary: #79aec8;
+  --secondary: #417690;
+  --accent: #f5dd5d;
   --primary-fg: #fff;
 
   --body-fg: #333;
@@ -25,7 +25,7 @@
   --breadcrumbs-link-fg: var(--body-bg);
   --breadcrumbs-bg: var(--primary);
 
-  --link-fg: black;
+  --link-fg: #447e9b;
   --link-hover-color: #036;
   --link-selected-fg: #5b80b2;
 
